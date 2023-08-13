@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html,body {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(159, 159, 255);
+  font-family: sans-serif;
+}
+
+.dnd {
+  width: 100%;
+}
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.tasks__container {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.task__item {
+  max-width: calc(100% / 3 - 30px);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #eeeeee;
+  flex: 1 1 auto;
+  box-shadow: 0 6px 4px rgba(0,0,0,0.3);
+}
+
+.task__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.task__list-item {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.add-another__btn {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 5px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-another__btn span {
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.another__input {
+  max-width: 100%;
+  width: 100%;
+}
+
+.another-form textarea{
+  max-width: 100%;
+  width: 100%;
+  resize: none;
+  min-height: 50px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.3);
+  outline: none;
+  font-size: 18px;
+  font-family: sans-serif;
+  padding: 5px;
+  color: #888;
+}
+
+.another__input-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.another__input-add {
+  font-size: 18px;
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 6px;
+  background-color: rgb(87, 209, 87);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.another__input-add:hover {
+  background-color: rgb(82, 189, 82);
+}
+
+.another__input-add:active {
+  box-shadow: none;
+  transform: translateY(3px);
+}
+
+.another__input-remove {
+  cursor: pointer;
+  font-size: 22px;
+  width: 30px;
+  background: transparent;
+  border: none;
+}
+
+.task__list-div {
+  background: #888;
+  border-radius: 10px;
+  border: 1px dashed #fff;
+}
