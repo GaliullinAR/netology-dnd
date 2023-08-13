@@ -1,17 +1,17 @@
 export default class TaskWidget {
   constructor(element, todos) {
-    if (typeof element === "string" && element[0] === ".") {
+    if (typeof element === 'string' && element[0] === '.') {
       this.element = document.qyuerySelector(element);
-    } else if (typeof element === "string" && element[0] !== ".") {
+    } else if (typeof element === 'string' && element[0] !== '.') {
       this.element = document.querySelector(`.${element}`);
     } else {
-      throw new Error("Не верно был указан селектор или не был найден");
+      throw new Error('Не верно был указан селектор или не был найден');
     }
 
     if (todos) {
       this.todos = todos;
     } else {
-      throw new Error("Передайте пожалуйста ваш список дел");
+      throw new Error('Передайте пожалуйста ваш список дел');
     }
 
     this.elemArr = [];
@@ -22,14 +22,13 @@ export default class TaskWidget {
   }
 
   createTodos() {
-    
-    for (let item in this.todos) {
-      const taskItem = document.createElement("div");
-      const taskTitle = document.createElement("h3");
-      const taskList = document.createElement("ul");
-      const addAnother = document.createElement("div");
+    for (const item in this.todos) {
+      const taskItem = document.createElement('div');
+      const taskTitle = document.createElement('h3');
+      const taskList = document.createElement('ul');
+      const addAnother = document.createElement('div');
 
-      let another = `
+      const another = `
         <div class="add-another">
           <button class="add-another__btn" type="button">
                 <span>+</span> 
@@ -51,14 +50,14 @@ export default class TaskWidget {
         </div>
       `;
 
-      taskItem.classList.add("task__item");
-      taskTitle.classList.add("task__title");
-      taskList.classList.add("task__list");
-      addAnother.classList.add("add-another");
+      taskItem.classList.add('task__item');
+      taskTitle.classList.add('task__title');
+      taskList.classList.add('task__list');
+      addAnother.classList.add('add-another');
 
       taskTitle.textContent = this.todos[item].title;
-      
-      this.todos[item].list.forEach(li => {
+
+      this.todos[item].list.forEach((li) => {
         const listItem = document.createElement('li');
         listItem.classList.add('task__list-item');
         listItem.setAttribute('draggable', 'true');

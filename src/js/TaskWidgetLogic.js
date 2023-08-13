@@ -3,7 +3,7 @@ export default class TaskWidgetLogic {
     if (Array.isArray(el) && el.length > 0) {
       this.el = el;
     } else {
-      throw new Error("Неверно передан тип данных или данные отсутствуют");
+      throw new Error('Неверно передан тип данных или данные отсутствуют');
     }
 
     this.selected = null;
@@ -14,48 +14,44 @@ export default class TaskWidgetLogic {
 
   on(typeListen, callback) {
     switch (typeListen) {
-      case "click": {
+      case 'click': {
         this.el.forEach((item) => {
           item.addEventListener(typeListen, callback);
         });
         break;
       }
-      case "submit": {
+      case 'submit': {
         this.el.forEach((item) => {
-          const form = item.querySelector(".another-form");
+          const form = item.querySelector('.another-form');
           form.addEventListener(typeListen, callback);
         });
         break;
       }
       default:
-        throw new Error("Неверно введено значение типа слушателя событий");
+        throw new Error('Неверно введено значение типа слушателя событий');
     }
   }
 
   onDnD() {
-   
-    this.el.forEach(item => {
+    this.el.forEach((item) => {
       const lists = item.querySelectorAll('.task__list-item');
 
-      lists.forEach(list => {
+      lists.forEach((list) => {
         list.addEventListener('dragstart', (e) => {
-          console.log(true)
           this.selected = e.target;
         });
 
         list.addEventListener('drop', (e) => {
-          let target = e.target;
+          const { target } = e;
 
           target.insertAdjacentElement('afterend', this.selected);
           this.selected = null;
-        })
-      })
+        });
+      });
 
       item.addEventListener('dragover', (e) => {
         e.preventDefault();
-        
-      })
-
-    })
+      });
+    });
   }
 }

@@ -3,18 +3,16 @@ export default class Storages {
     if (typeof name === 'string' && items) {
       localStorage.setItem(name, JSON.stringify(items));
       return true;
-    } else {
-      throw new Error('Не правильно был передано имя или значение');
     }
+    throw new Error('Не правильно был передано имя или значение');
   }
 
   static getItem(name) {
     const item = JSON.parse(localStorage.getItem(name));
-    
+
     if (item) {
       return item;
-    } else {
-      return false;
     }
+    return false;
   }
 }

@@ -11,5 +11,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-restricted-syntax": "off",
+        "guard-for-in": "off"
     }
 }

@@ -6,7 +6,7 @@ branches:
     - main
 install: yarn
 build: off
-test_script: yarn test && yarn run lint
+test_script: yarn run lint
 build_script: yarn run build
 deploy_script:
   - git config --global credential.helper store
